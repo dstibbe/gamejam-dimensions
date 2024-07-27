@@ -48,7 +48,7 @@ func _process(delta):
 
 func change_blocks(side:int, z:int):
 	for child in get_children():
-		if child is Block:
+		if child is Thing:
 			if side == 1:
 				print("Child: ", child.position.z, " player: ", z)
 				if child.position.z == z:

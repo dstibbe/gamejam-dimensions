@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdu6i4dfan6mb"]
+[gd_scene load_steps=5 format=3 uid="uid://cdu6i4dfan6mb"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_f7tgl"]
 [ext_resource type="PackedScene" uid="uid://cm28x7ffdcohh" path="res://objects/floor.tscn" id="2_kcw18"]
 [ext_resource type="PackedScene" uid="uid://cnwt7j0wwcitr" path="res://objects/block.tscn" id="3_bhdnp"]
+[ext_resource type="PackedScene" uid="uid://do5gu2yeyogp3" path="res://objects/exit.tscn" id="3_saw7e"]
 
 [node name="map0" type="Node3D"]
 script = ExtResource("1_f7tgl")
@@ -20,6 +21,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="floor5" parent="." instance=ExtResource("2_kcw18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="exit" parent="." instance=ExtResource("3_saw7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -1.0257)
 
 [node name="block" parent="." instance=ExtResource("3_bhdnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)

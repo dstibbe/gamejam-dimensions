@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://do5gu2yeyogp3"]
+
+[ext_resource type="Script" path="res://objects/exit.gd" id="1_vbrju"]
+[ext_resource type="Texture2D" uid="uid://dpcv1oktqmfeq" path="res://resources/green_debug.png" id="2_yp7jl"]
+[ext_resource type="Material" uid="uid://bbssg77t1gpgv" path="res://resources/bloack_shader_material.tres" id="3_yaa2k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6tkjn"]
+size = Vector3(1, 2.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uw55c"]
+albedo_texture = ExtResource("2_yp7jl")
+
+[sub_resource type="BoxMesh" id="BoxMesh_n8wmx"]
+material = ExtResource("3_yaa2k")
+size = Vector3(1, 2.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhvvf"]
+margin = 0.0
+size = Vector3(1, 2.5, 2)
+
+[node name="block" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+script = ExtResource("1_vbrju")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6tkjn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_uw55c")
+mesh = SubResource("BoxMesh_n8wmx")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_uhvvf")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]
