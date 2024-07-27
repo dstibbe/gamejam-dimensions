@@ -54,7 +54,6 @@ func invisble():
 
 
 func _on_body_entered(body):
-	print(self )
 	if body is Player:
 		body.move_to_z_not_possible(position.z)
 	

@@ -35,7 +35,6 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if Input.is_action_just_released("up"):
-		print(get_parent())
 		if position.z > minz:
 			if possible_min:
 				position.z = roundi(position.z - side * 1)

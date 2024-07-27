@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bbssg77t1gpgv"]
+
+[ext_resource type="Shader" uid="uid://bgabk7oh7korh" path="res://game/block_shader.tres" id="1_npndi"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_npndi")
