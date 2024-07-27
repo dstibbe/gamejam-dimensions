@@ -1,5 +1,5 @@
 @tool
-class_name Map1 extends Node3D
+class_name GameMap extends Node3D
 
 var player:Player
 
