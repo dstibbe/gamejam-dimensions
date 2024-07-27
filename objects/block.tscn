@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnwt7j0wwcitr"]
+[gd_scene load_steps=8 format=3 uid="uid://cnwt7j0wwcitr"]
 
 [ext_resource type="Script" path="res://objects/block.gd" id="1_xmqio"]
 [ext_resource type="Shader" uid="uid://bgabk7oh7korh" path="res://game/block_shader.tres" id="2_6x6wk"]
+[ext_resource type="Material" uid="uid://cyx23ji4hmvli" path="res://resources/test_texture.tres" id="3_yb6yw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6tkjn"]
 
@@ -25,6 +26,7 @@ shape = SubResource("BoxShape3D_6tkjn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_overlay = ExtResource("3_yb6yw")
 mesh = SubResource("BoxMesh_i5p0i")
 
 [node name="Area3D" type="Area3D" parent="."]

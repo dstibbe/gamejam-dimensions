@@ -38,7 +38,9 @@ func create_map(player_zpos:float):
 			child.set_wall_size(height, width)
 	player.set_zs(-2, 2)
 	player.set_xs(-8, 8)
-	change_blocks(1, player_zpos)
+	
+	if !Engine.is_editor_hint():
+		change_blocks(1, player_zpos)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

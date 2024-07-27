@@ -220,4 +220,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 8, 1)
 
 [node name="block67" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98091, 4.98969, 0.22039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, 0)
