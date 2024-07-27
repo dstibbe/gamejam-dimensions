@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm28x7ffdcohh"]
+
+[ext_resource type="Script" path="res://objects/floor.gd" id="1_pfp6v"]
+[ext_resource type="Shader" uid="uid://bgabk7oh7korh" path="res://game/block_shader.tres" id="2_kttqt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6tkjn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjcej"]
+render_priority = 0
+shader = ExtResource("2_kttqt")
+
+[sub_resource type="BoxMesh" id="BoxMesh_i5p0i"]
+material = SubResource("ShaderMaterial_bjcej")
+
+[node name="floor" type="StaticBody3D"]
+script = ExtResource("1_pfp6v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_6tkjn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_i5p0i")

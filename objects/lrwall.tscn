@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctuw11rs006ye"]
+
+[ext_resource type="Script" path="res://objects/lrwall.gd" id="1_jm84f"]
+[ext_resource type="Shader" uid="uid://bgabk7oh7korh" path="res://game/block_shader.tres" id="2_tisxd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6tkjn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjcej"]
+render_priority = 0
+shader = ExtResource("2_tisxd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_i5p0i"]
+material = SubResource("ShaderMaterial_bjcej")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7rysx"]
+margin = 0.0
+size = Vector3(1, 1, 0.1)
+
+[node name="lrwall" type="StaticBody3D"]
+script = ExtResource("1_jm84f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_6tkjn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_i5p0i")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_7rysx")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]
