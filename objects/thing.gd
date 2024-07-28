@@ -3,9 +3,7 @@ class_name Thing extends StaticBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	pass # Replace with function body.
-
+	add_to_group("blocks")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -13,7 +11,6 @@ func _process(delta):
 
 
 func be_visible():
-	print("block_visible")
 	for child in get_children():
 		if child is MeshInstance3D:
 			child.visible = true
@@ -43,7 +40,6 @@ func barely_visible():
 			child.set_instance_shader_parameter("invisible", false)
 
 func invisble():
-	print("block_invisible")
 	for child in get_children():
 		if child is MeshInstance3D:
 			child.visible = false
@@ -51,15 +47,3 @@ func invisble():
 			child.set_instance_shader_parameter("fading", false)
 			child.set_instance_shader_parameter("barely_visible", false)
 			child.set_instance_shader_parameter("invisible", true)
-
-
-func _on_body_entered(body):
-	if body is Player:
-		print("Next to block ", name)
-		body.move_to_z_not_possible(position.z)
-	
-func _on_body_exited(body):
-	if body is Player:
-		
-		print("Leaving block ", name)
-		body.move_to_z_possible(position.z)

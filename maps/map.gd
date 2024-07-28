@@ -39,6 +39,7 @@ func _process(delta):
 	pass
 
 func change_blocks(side:int, z:int):
+	#for child in get_tree().get_nodes_in_group("blocks"):
 	for child in get_children():
 		if child is Thing:
 			if side == 1:

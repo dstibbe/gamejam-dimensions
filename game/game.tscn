@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctvcmsonq3f4e"]
+[gd_scene load_steps=8 format=3 uid="uid://ctvcmsonq3f4e"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_sgoyd"]
 [ext_resource type="PackedScene" uid="uid://cdu6i4dfan6mb" path="res://maps/map0.tscn" id="2_hj38b"]
+[ext_resource type="PackedScene" uid="uid://cydjgoqobfxlp" path="res://maps/map3.tscn" id="2_p7w4v"]
 [ext_resource type="PackedScene" uid="uid://diga8twhfote2" path="res://player/player.tscn" id="3_2xt0o"]
-[ext_resource type="PackedScene" uid="uid://d2d0apapxa1uy" path="res://maps/mapX.tscn" id="3_qvs5b"]
+[ext_resource type="PackedScene" uid="uid://ii8h5vmrlpmn" path="res://maps/map1.tscn" id="3_q4qnp"]
+[ext_resource type="PackedScene" uid="uid://d03lakpqdeqio" path="res://maps/map2.tscn" id="4_61pmw"]
 
 [sub_resource type="Environment" id="Environment_mmy7v"]
 ambient_light_source = 2
@@ -11,7 +13,7 @@ ambient_light_color = Color(0.355314, 0.355314, 0.355314, 0)
 
 [node name="game" type="Node3D"]
 script = ExtResource("1_sgoyd")
-maps = Array[PackedScene]([ExtResource("2_hj38b"), ExtResource("3_qvs5b")])
+maps = Array[PackedScene]([ExtResource("2_hj38b"), ExtResource("3_q4qnp"), ExtResource("4_61pmw"), ExtResource("2_p7w4v")])
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7547, 10)

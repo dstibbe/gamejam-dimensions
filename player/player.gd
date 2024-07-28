@@ -38,17 +38,25 @@ func _physics_process(delta):
 	if Input.is_action_just_released("up"):
 		if position.z > minz:
 			
-			if door == -1:
-				get_parent().end_level()
-			elif collision_min == 0:
+			if $back.has_overlapping_bodies():
+				for body in $back.get_overlapping_bodies():
+					print("Front: ", body)
+					if body is Exit:
+						get_parent().end_level()
+						break
+			else:
 				position.z = roundi(position.z - side * 1)
 				get_parent()._player_z_pos_changed(1, position.z)
 			
 	if Input.is_action_just_pressed("down"):
 		if position.z < maxz:
-			if door == 1:
-				get_parent().end_level()
-			elif collision_plus == 0:
+			if $front.has_overlapping_bodies():
+				for body in $front.get_overlapping_bodies():
+					print("Back: ", body)
+					if body is Exit:
+						get_parent().end_level()
+						break
+			else:
 				position.z = roundi(position.z +  side * 1)
 				get_parent()._player_z_pos_changed(1, position.z) #1 is side,in case you want to turn around
 	move_and_slide()
@@ -60,25 +68,3 @@ func set_zs(min_z, max_z):
 func set_xs(min_x, max_x):
 	minx = min_x
 	maxx = max_x
-
-func move_to_z_not_possible(posz):
-	if posz < position.z:
-		collision_min+=1
-	if posz > position.z:
-		collision_plus+=1
-
-func move_to_z_possible(posz):
-	if posz < position.z:
-		collision_min -=1
-	if posz > position.z:
-		collision_plus -=1
-
-func infront_of_door(z:float):
-	if z < position.z:
-		door = -1
-	if z > position.z:
-		door = 1
-		
-
-func not_infront_of_door(z:float):
-	door = 0		

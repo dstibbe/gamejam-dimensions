@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://diga8twhfote2"]
+[gd_scene load_steps=6 format=3 uid="uid://diga8twhfote2"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_7orjl"]
 
@@ -13,6 +13,9 @@ emission = Color(1, 1, 1, 1)
 material = SubResource("StandardMaterial3D_yetp8")
 size = Vector3(1, 2, 0.01)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1psfl"]
+size = Vector3(0.7, 1.8, 0.5)
+
 [node name="player" type="CharacterBody3D"]
 floor_snap_length = 1.0
 script = ExtResource("1_7orjl")
@@ -24,3 +27,15 @@ shape = SubResource("BoxShape3D_dbsnc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_83qcx")
+
+[node name="front" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="front"]
+shape = SubResource("BoxShape3D_1psfl")
+
+[node name="back" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="back"]
+shape = SubResource("BoxShape3D_1psfl")

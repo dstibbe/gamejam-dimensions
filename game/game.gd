@@ -39,7 +39,7 @@ func end_level():
 	if new_level == nr_levels:
 		print("Finished!")
 		get_tree().quit()
-	
-	var old_map = current_map
-	start_level(current_level + 1)	
-	old_map.queue_free()
+	else:	
+		var old_map = current_map
+		start_level(new_level)	
+		old_map.queue_free()
