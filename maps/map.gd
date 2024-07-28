@@ -7,24 +7,16 @@ var height = 8
 var length = 17
 var width = 5
 var positions:Array[Vector3]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#if Engine.is_editor_hint():
-		#var count:Array = [0, 0, 0] #[floors, fbwalls, lrwalls]
-		#for child in get_children():
-			#if child is Floor:
-				#child.set_floor_size(length)
-			#if child is FBWall:
-				#child.set_wall_size(length, height)
-			#if child is LRWall:
-				#child.set_wall_size(height, width)
-				#pass
-	#else:
-	#create_map()
 	if Engine.is_editor_hint():
 		if player == null:
 			player = Player.new()
 		create_map(0)
+
+func spawn_player():
+	player.position = $start.position
 
 func create_map(player_zpos:float):
 	var count:Array = []
@@ -50,7 +42,6 @@ func change_blocks(side:int, z:int):
 	for child in get_children():
 		if child is Thing:
 			if side == 1:
-				print("Child: ", child.position.z, " player: ", z)
 				if child.position.z == z:
 					child.be_visible()
 				elif child.position.z == z - 1:

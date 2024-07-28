@@ -8,11 +8,11 @@ var minz = 0
 var maxz = 0
 var minx = 0
 var maxx = 0
-var possible_plus = true
-var possible_min = true
+var collision_plus: int = 0
+var collision_min: int = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+var door = 0
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -31,21 +31,26 @@ func _physics_process(delta):
 		velocity.x = direction.x * SPEED * side
 		if position.x > maxx or position.x < minx:
 			position.x = roundi(position.x)
-
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	
 	if Input.is_action_just_released("up"):
 		if position.z > minz:
-			if possible_min:
+			
+			if door == -1:
+				get_parent().end_level()
+			elif collision_min == 0:
 				position.z = roundi(position.z - side * 1)
 				get_parent()._player_z_pos_changed(1, position.z)
+			
 	if Input.is_action_just_pressed("down"):
 		if position.z < maxz:
-			if possible_plus:
+			if door == 1:
+				get_parent().end_level()
+			elif collision_plus == 0:
 				position.z = roundi(position.z +  side * 1)
 				get_parent()._player_z_pos_changed(1, position.z) #1 is side,in case you want to turn around
-		
-
 	move_and_slide()
 
 func set_zs(min_z, max_z):
@@ -58,12 +63,22 @@ func set_xs(min_x, max_x):
 
 func move_to_z_not_possible(posz):
 	if posz < position.z:
-		possible_min = false
+		collision_min+=1
 	if posz > position.z:
-		possible_plus = false
+		collision_plus+=1
 
 func move_to_z_possible(posz):
 	if posz < position.z:
-		possible_min = true
+		collision_min -=1
 	if posz > position.z:
-		possible_plus = true
+		collision_plus -=1
+
+func infront_of_door(z:float):
+	if z < position.z:
+		door = -1
+	if z > position.z:
+		door = 1
+		
+
+func not_infront_of_door(z:float):
+	door = 0		

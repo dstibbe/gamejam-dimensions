@@ -55,8 +55,11 @@ func invisble():
 
 func _on_body_entered(body):
 	if body is Player:
+		print("Next to block ", name)
 		body.move_to_z_not_possible(position.z)
 	
 func _on_body_exited(body):
 	if body is Player:
+		
+		print("Leaving block ", name)
 		body.move_to_z_possible(position.z)

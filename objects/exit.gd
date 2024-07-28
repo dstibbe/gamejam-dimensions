@@ -18,4 +18,15 @@ func _process(delta):
 
 
 
+func _in_front_of_exit(body):
+	if body is Player:
+		print("next to door")
+		body.infront_of_door(position.z)
+	
+func _away_from_of_exit(body):
+	if body is Player:
+		print("away  from door")
+		body.not_infront_of_door(position.z)
+
+
 

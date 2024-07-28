@@ -18,8 +18,8 @@ size = Vector3(1, 2.5, 1)
 margin = 0.0
 size = Vector3(1, 2.5, 2)
 
-[node name="block" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+[node name="exit" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_vbrju")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -34,5 +34,5 @@ mesh = SubResource("BoxMesh_n8wmx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_uhvvf")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_in_front_of_exit"]
+[connection signal="body_exited" from="Area3D" to="." method="_away_from_of_exit"]

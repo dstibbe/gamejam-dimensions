@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2d0apapxa1uy"]
+[gd_scene load_steps=5 format=3 uid="uid://wrdfdt1y362h"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_ytc8a"]
 [ext_resource type="PackedScene" uid="uid://cm28x7ffdcohh" path="res://objects/floor.tscn" id="2_lee7b"]
+[ext_resource type="PackedScene" uid="uid://do5gu2yeyogp3" path="res://objects/exit.tscn" id="3_fdgm0"]
 [ext_resource type="PackedScene" uid="uid://cnwt7j0wwcitr" path="res://objects/block.tscn" id="4_otl6h"]
 
-[node name="map1" type="Node3D"]
+[node name="map0" type="Node3D"]
 script = ExtResource("1_ytc8a")
 
 [node name="floor" parent="." instance=ExtResource("2_lee7b")]
@@ -21,203 +22,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 [node name="floor5" parent="." instance=ExtResource("2_lee7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
+[node name="exit" parent="." instance=ExtResource("3_fdgm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -1)
+
 [node name="block" parent="." instance=ExtResource("4_otl6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 
 [node name="block2" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
-
-[node name="block3" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-
-[node name="block4" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 1)
-
-[node name="block5" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)
-
-[node name="block6" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
-
-[node name="block7" parent="." instance=ExtResource("4_otl6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1)
 
-[node name="block8" parent="." instance=ExtResource("4_otl6h")]
+[node name="block3" parent="." instance=ExtResource("4_otl6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
 
-[node name="block9" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
+[node name="block4" parent="." instance=ExtResource("4_otl6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
 
-[node name="block10" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 2)
+[node name="block5" parent="." instance=ExtResource("4_otl6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
 
-[node name="block11" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 2)
-
-[node name="block12" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 1)
-
-[node name="block13" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
-
-[node name="block14" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -1)
-
-[node name="block15" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -2)
-
-[node name="block16" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 2)
-
-[node name="block17" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 1)
-
-[node name="block18" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 0)
-
-[node name="block19" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, -1)
-
-[node name="block20" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, -2)
-
-[node name="block21" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 2)
-
-[node name="block22" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 1)
-
-[node name="block23" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 0)
-
-[node name="block24" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, -1)
-
-[node name="block25" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, -2)
-
-[node name="block26" parent="." instance=ExtResource("4_otl6h")]
+[node name="block6" parent="." instance=ExtResource("4_otl6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -2)
 
-[node name="block27" parent="." instance=ExtResource("4_otl6h")]
+[node name="block7" parent="." instance=ExtResource("4_otl6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -2)
 
-[node name="block28" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -1)
-
-[node name="block30" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
-
-[node name="block29" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
-
-[node name="block31" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 0)
-
-[node name="block32" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 2)
-
-[node name="block33" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 1)
-
-[node name="block34" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, -2)
-
-[node name="block35" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, -2)
-
-[node name="block36" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, -2)
-
-[node name="block37" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, 2)
-
-[node name="block38" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, 1)
-
-[node name="block39" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, 0)
-
-[node name="block40" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, -1)
-
-[node name="block41" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, -2)
-
-[node name="block42" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 2)
-
-[node name="block43" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 1)
-
-[node name="block44" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 0)
-
-[node name="block45" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, -1)
-
-[node name="block46" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, -2)
-
-[node name="block47" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6, 2)
-
-[node name="block48" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6, 1)
-
-[node name="block49" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6, 0)
-
-[node name="block50" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6, -1)
-
-[node name="block51" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 6, -2)
-
-[node name="block52" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 2)
-
-[node name="block53" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 2)
-
-[node name="block54" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 2)
-
-[node name="block55" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -2)
-
-[node name="block56" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -2)
-
-[node name="block57" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -2)
-
-[node name="block58" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, -2)
-
-[node name="block59" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, -2)
-
-[node name="block60" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, -2)
-
-[node name="block61" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, -2)
-
-[node name="block62" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 7, -2)
-
-[node name="block63" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7, -2)
-
-[node name="block64" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7, 0)
-
-[node name="block65" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7, 1)
-
-[node name="block66" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 8, 1)
-
-[node name="block67" parent="." instance=ExtResource("4_otl6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, 0)
+[node name="start" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40228, 0.985776, 0)
