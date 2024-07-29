@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctvcmsonq3f4e"]
+[gd_scene load_steps=10 format=3 uid="uid://ctvcmsonq3f4e"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_sgoyd"]
 [ext_resource type="PackedScene" uid="uid://owkqw4kbnt0h" path="res://maps/map-test.tscn" id="2_70200"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://diga8twhfote2" path="res://player/player.tscn" id="3_2xt0o"]
 [ext_resource type="PackedScene" uid="uid://ii8h5vmrlpmn" path="res://maps/map1.tscn" id="3_q4qnp"]
 [ext_resource type="PackedScene" uid="uid://d03lakpqdeqio" path="res://maps/map2.tscn" id="4_61pmw"]
+[ext_resource type="Script" path="res://game/keyboard_controller.gd" id="8_2qkg5"]
 
 [sub_resource type="Environment" id="Environment_mmy7v"]
 ambient_light_source = 2
@@ -31,3 +32,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55491, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mmy7v")
+
+[node name="KeyboardController" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55491, 0)
+script = ExtResource("8_2qkg5")
+player = NodePath("../player")

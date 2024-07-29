@@ -1,5 +1,8 @@
 class_name Player extends CharacterBody3D
 
+enum DIRECTION {NONE, UP,DOWN,LEFT,RIGHT}
+enum ACTION {NONE, JUMP}
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var side = 1
@@ -13,28 +16,36 @@ var collision_min: int = 0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var door = 0
 
+
+var direction: DIRECTION = DIRECTION.NONE
+var action: ACTION = ACTION.NONE
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if action == ACTION.JUMP and is_on_floor():
+		
+		print(Time.get_unix_time_from_system(), " jumping")
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "`", "`")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, 0)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED * side
+
+	if direction== DIRECTION.LEFT:
+		velocity.x = -1 * SPEED
+		if position.x > maxx or position.x < minx:
+			position.x = roundi(position.x)
+	elif direction== DIRECTION.RIGHT:
+		velocity.x = SPEED
 		if position.x > maxx or position.x < minx:
 			position.x = roundi(position.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
 	
-	if Input.is_action_just_released("up"):
+	
+	if direction== DIRECTION.UP:
 		if position.z > minz:
 			
 			if $back.has_overlapping_bodies():
@@ -46,7 +57,7 @@ func _physics_process(delta):
 			else:
 				move_z(1)
 			
-	if Input.is_action_just_pressed("down"):
+	if direction== DIRECTION.DOWN:
 		if position.z < maxz:
 			if $front.has_overlapping_bodies():
 				for body in $front.get_overlapping_bodies():
@@ -57,6 +68,19 @@ func _physics_process(delta):
 			else:
 				move_z(-1)
 	move_and_slide()
+	direction= DIRECTION.NONE
+	action = ACTION.NONE
+	
+func up():
+	direction= DIRECTION.UP
+func down():
+	direction= DIRECTION.DOWN
+func left():
+	direction= DIRECTION.LEFT
+func right():
+	direction= DIRECTION.RIGHT
+func jump():
+	action = ACTION.JUMP
 
 func set_zs(min_z, max_z):
 	minz = min_z

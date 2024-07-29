@@ -15,10 +15,10 @@ func start_level(lvl:int):
 	assert(0 <= lvl && lvl < nr_levels, str("Invalid level: ", lvl))
 	current_level = lvl
 	current_map = maps[current_level].instantiate()
-	add_child(current_map)
 	current_map.player=$player
-	current_map.create_map(0)
+	current_map.create_map()
 	current_map.spawn_player()
+	add_child(current_map)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

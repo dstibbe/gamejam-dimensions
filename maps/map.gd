@@ -11,14 +11,13 @@ var positions:Array[Vector3]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Engine.is_editor_hint():
-		if player == null:
-			player = Player.new()
-		create_map(0)
+		create_map()
 
 func spawn_player():
 	player.move_to_position( $start.position )
+	change_block_visibility(player.position.z)
 
-func create_map(player_zpos:float):
+func create_map():
 	var count:Array = []
 	
 	for child in get_children():
@@ -31,8 +30,6 @@ func create_map(player_zpos:float):
 	player.set_zs(-2, 2)
 	player.set_xs(-8, 8)
 	
-	if !Engine.is_editor_hint():
-		change_block_visibility(player_zpos)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
