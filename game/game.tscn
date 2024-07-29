@@ -11,10 +11,10 @@
 
 [sub_resource type="Environment" id="Environment_mmy7v"]
 ambient_light_source = 2
-ambient_light_color = Color(0.356863, 0.709804, 0.678431, 0)
-fog_enabled = true
+ambient_light_color = Color(0.91664, 0.91664, 0.91664, 1)
+ambient_light_energy = 2.15
+fog_light_color = Color(0.807843, 1, 0.952941, 1)
 fog_density = 0.0767
-volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0, 0.74902, 0.87451, 1)
 volumetric_fog_emission = Color(0, 0, 0.901961, 1)
 

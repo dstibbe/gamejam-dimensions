@@ -13,9 +13,7 @@ shader_parameter/depth = 5
 shader_parameter/z = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_83qcx"]
-lightmap_size_hint = Vector2i(9, 31)
 material = SubResource("ShaderMaterial_d2mwo")
-add_uv2 = true
 size = Vector3(1, 2, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1psfl"]
