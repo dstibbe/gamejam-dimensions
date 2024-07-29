@@ -1,8 +1,11 @@
 @tool
 class_name Exit extends Thing
 
+signal triggered
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("exit")
 	position = Vector3(roundi(position.x), roundi(position.y), roundi(position.z))
 	
 	if !Engine.is_editor_hint():
@@ -14,3 +17,5 @@ func _process(delta):
 	pass
 
 
+func trigger():
+	triggered.emit()

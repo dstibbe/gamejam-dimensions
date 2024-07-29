@@ -3,6 +3,8 @@ class_name Player extends CharacterBody3D
 enum DIRECTION {NONE, UP,DOWN,LEFT,RIGHT}
 enum ACTION {NONE, JUMP}
 
+signal new_z_pos(z:float)
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var side = 1
@@ -52,7 +54,7 @@ func _physics_process(delta):
 				for body in $back.get_overlapping_bodies():
 					print("Front: ", body)
 					if body is Exit:
-						get_parent().end_level()
+						body.trigger()
 						break
 			else:
 				move_z(1)
@@ -63,7 +65,7 @@ func _physics_process(delta):
 				for body in $front.get_overlapping_bodies():
 					print("Back: ", body)
 					if body is Exit:
-						get_parent().end_level()
+						body.trigger()
 						break
 			else:
 				move_z(-1)
@@ -99,5 +101,4 @@ func move_z(delta_z: int) -> void:
 	var mat:ShaderMaterial = $MeshInstance3D.mesh.material
 	print("Setting shader 'z': ", roundi(position.z))
 	mat.set_shader_parameter("z", roundi(position.z))
-	get_parent()._player_z_pos_changed(position.z)
-	
+	new_z_pos.emit(position.z)

@@ -1,6 +1,8 @@
 @tool
 class_name GameMap extends Node3D
 
+signal exiting
+
 var player:Player
 
 var height = 8
@@ -12,6 +14,9 @@ var positions:Array[Vector3]
 func _ready():
 	if Engine.is_editor_hint():
 		create_map()
+	else:
+		for exit_node in get_tree().get_nodes_in_group("exit"):
+			exit_node.triggered.connect(exit)
 
 func spawn_player():
 	player.move_to_position( $start.position )
@@ -48,4 +53,6 @@ func change_block_visibility(z:int):
 			elif child.position.z > z or child.position.z <= z - 0.3:
 				child.invisble()
 			
-			
+func exit():
+	print("Exiting map")
+	exiting.emit()				

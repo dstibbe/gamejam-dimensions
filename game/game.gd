@@ -18,13 +18,14 @@ func start_level(lvl:int):
 	current_map.player=$player
 	current_map.create_map()
 	current_map.spawn_player()
+	current_map.exiting.connect(end_level)
 	add_child(current_map)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func _player_z_pos_changed(z):
+func _player_z_pos_changed(z:float):
 	current_map.change_block_visibility(z)
 	$Camera3D.position.z = 10 + z
 
