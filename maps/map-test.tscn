@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://owkqw4kbnt0h"]
+
+[ext_resource type="Script" path="res://maps/map.gd" id="1_88mik"]
+[ext_resource type="PackedScene" uid="uid://cm28x7ffdcohh" path="res://objects/floor.tscn" id="2_tcr40"]
+[ext_resource type="PackedScene" uid="uid://do5gu2yeyogp3" path="res://objects/exit.tscn" id="3_ucw8k"]
+
+[node name="map0" type="Node3D"]
+script = ExtResource("1_88mik")
+
+[node name="floor" parent="." instance=ExtResource("2_tcr40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="floor2" parent="." instance=ExtResource("2_tcr40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="floor3" parent="." instance=ExtResource("2_tcr40")]
+
+[node name="floor4" parent="." instance=ExtResource("2_tcr40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="floor5" parent="." instance=ExtResource("2_tcr40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="exit" parent="." instance=ExtResource("3_ucw8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -1)
+
+[node name="start" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40228, 0.985776, 0)

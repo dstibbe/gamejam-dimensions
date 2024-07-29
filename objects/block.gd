@@ -11,7 +11,6 @@ func _ready():
 	else:
 		var material = ResourceLoader.load("res://resources/bloack_shader_material.tres", "ShaderMaterial")
 		$MeshInstance3D.material_override = null
-		print($MeshInstance3D.material_override )
 	
 
 

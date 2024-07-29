@@ -1,6 +1,5 @@
 class_name Player extends CharacterBody3D
 
-
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var side = 1
@@ -45,8 +44,7 @@ func _physics_process(delta):
 						get_parent().end_level()
 						break
 			else:
-				position.z = roundi(position.z - side * 1)
-				get_parent()._player_z_pos_changed(1, position.z)
+				move_z(1)
 			
 	if Input.is_action_just_pressed("down"):
 		if position.z < maxz:
@@ -57,8 +55,7 @@ func _physics_process(delta):
 						get_parent().end_level()
 						break
 			else:
-				position.z = roundi(position.z +  side * 1)
-				get_parent()._player_z_pos_changed(1, position.z) #1 is side,in case you want to turn around
+				move_z(-1)
 	move_and_slide()
 
 func set_zs(min_z, max_z):
@@ -68,3 +65,15 @@ func set_zs(min_z, max_z):
 func set_xs(min_x, max_x):
 	minx = min_x
 	maxx = max_x
+
+func move_to_position(new_position: Vector3) -> void:
+	position = new_position
+	move_z(0)
+
+func move_z(delta_z: int) -> void:
+	position.z = roundi(position.z - side * delta_z)
+	var mat:ShaderMaterial = $MeshInstance3D.mesh.material
+	print("Setting shader 'z': ", roundi(position.z))
+	mat.set_shader_parameter("z", roundi(position.z))
+	get_parent()._player_z_pos_changed(position.z)
+	

@@ -1,16 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://diga8twhfote2"]
+[gd_scene load_steps=7 format=3 uid="uid://diga8twhfote2"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_7orjl"]
+[ext_resource type="Shader" path="res://player/player.gdshader" id="2_wtjl0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dbsnc"]
 size = Vector3(1, 2, 0.01)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yetp8"]
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2mwo"]
+render_priority = 0
+shader = ExtResource("2_wtjl0")
+shader_parameter/depth = 5
+shader_parameter/z = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_83qcx"]
-material = SubResource("StandardMaterial3D_yetp8")
+lightmap_size_hint = Vector2i(9, 31)
+material = SubResource("ShaderMaterial_d2mwo")
+add_uv2 = true
 size = Vector3(1, 2, 0.01)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1psfl"]

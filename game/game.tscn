@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctvcmsonq3f4e"]
+[gd_scene load_steps=9 format=3 uid="uid://ctvcmsonq3f4e"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_sgoyd"]
+[ext_resource type="PackedScene" uid="uid://owkqw4kbnt0h" path="res://maps/map-test.tscn" id="2_70200"]
 [ext_resource type="PackedScene" uid="uid://cdu6i4dfan6mb" path="res://maps/map0.tscn" id="2_hj38b"]
 [ext_resource type="PackedScene" uid="uid://cydjgoqobfxlp" path="res://maps/map3.tscn" id="2_p7w4v"]
 [ext_resource type="PackedScene" uid="uid://diga8twhfote2" path="res://player/player.tscn" id="3_2xt0o"]
@@ -9,11 +10,16 @@
 
 [sub_resource type="Environment" id="Environment_mmy7v"]
 ambient_light_source = 2
-ambient_light_color = Color(0.355314, 0.355314, 0.355314, 0)
+ambient_light_color = Color(0.356863, 0.709804, 0.678431, 0)
+fog_enabled = true
+fog_density = 0.0767
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0, 0.74902, 0.87451, 1)
+volumetric_fog_emission = Color(0, 0, 0.901961, 1)
 
 [node name="game" type="Node3D"]
 script = ExtResource("1_sgoyd")
-maps = Array[PackedScene]([ExtResource("2_hj38b"), ExtResource("3_q4qnp"), ExtResource("4_61pmw"), ExtResource("2_p7w4v")])
+maps = Array[PackedScene]([ExtResource("2_70200"), ExtResource("2_hj38b"), ExtResource("3_q4qnp"), ExtResource("4_61pmw"), ExtResource("2_p7w4v")])
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7547, 10)
@@ -22,10 +28,6 @@ size = 13.381
 
 [node name="player" parent="." instance=ExtResource("3_2xt0o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55491, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.401)
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mmy7v")

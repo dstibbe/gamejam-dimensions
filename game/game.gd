@@ -9,7 +9,6 @@ var current_map:GameMap
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	assert(maps.size() > 0, "No maps configured")
-	
 	start_level(0)
 	
 func start_level(lvl:int):
@@ -25,14 +24,9 @@ func start_level(lvl:int):
 func _process(delta):
 	pass
 
-func _player_z_pos_changed(side, z): #side == 1 -> + z == backwards
-	#change_blocks(side, z)
-	current_map.change_blocks(side, z)
+func _player_z_pos_changed(z):
+	current_map.change_block_visibility(z)
 	$Camera3D.position.z = 10 + z
-
-func change_blocks(side, z):
-	current_map.change_blocks(side, z)
-
 
 func end_level():
 	var new_level = current_level + 1

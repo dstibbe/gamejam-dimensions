@@ -20,7 +20,6 @@ func be_visible():
 			child.set_instance_shader_parameter("invisible", false)
 
 func fading():
-	print("block_fading")
 	for child in get_children():
 		if child is MeshInstance3D:
 			child.visible = true
@@ -30,7 +29,6 @@ func fading():
 			child.set_instance_shader_parameter("invisible", false)
 
 func barely_visible():
-	print("block_barely_visible")
 	for child in get_children():
 		if child is MeshInstance3D:
 			child.visible = true
