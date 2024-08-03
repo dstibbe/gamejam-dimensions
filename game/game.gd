@@ -25,10 +25,12 @@ func _process(delta):
 	pass
 
 func _player_z_pos_changed(z:float):
+	Audio.change_dimensions()
 	current_map.change_block_visibility(z)
 	$Camera3D.position.z = 10 + z
 
 func end_level():
+	Audio.level_clear()
 	var new_level = current_level + 1
 	if new_level == nr_levels:
 		print("Finished!")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dylqffsnqjhl8"]
+[gd_scene load_steps=9 format=3 uid="uid://dyyayaoels8i5"]
 
 [ext_resource type="Script" path="res://objects/halfwall.gd" id="1_xd68b"]
 [ext_resource type="Shader" path="res://resources/slicer.gdshader" id="2_pqqys"]

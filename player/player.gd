@@ -28,7 +28,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	if action == ACTION.JUMP and is_on_floor():
-		
+		Audio.jump()
 		print(Time.get_unix_time_from_system(), " jumping")
 		velocity.y = JUMP_VELOCITY
 
@@ -101,4 +101,5 @@ func move_z(delta_z: int) -> void:
 	var mat:ShaderMaterial = $MeshInstance3D.mesh.material
 	print("Setting shader 'z': ", roundi(position.z))
 	mat.set_shader_parameter("z", roundi(position.z))
-	new_z_pos.emit(position.z)
+	if delta_z!=0 :
+		new_z_pos.emit(position.z)

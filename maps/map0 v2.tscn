@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdu6i4dfan6mb"]
+[gd_scene load_steps=5 format=3 uid="uid://ddrnxfdyh5mt0"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_f7tgl"]
 [ext_resource type="PackedScene" uid="uid://cm28x7ffdcohh" path="res://objects/floor.tscn" id="2_kcw18"]
-[ext_resource type="PackedScene" uid="uid://do5gu2yeyogp3" path="res://objects/exit.tscn" id="3_saw7e"]
-[ext_resource type="PackedScene" uid="uid://dylqffsnqjhl8" path="res://objects/halfwall.tscn" id="4_8mtho"]
+[ext_resource type="PackedScene" path="res://objects/exit.tscn" id="3_saw7e"]
+[ext_resource type="PackedScene" uid="uid://dyyayaoels8i5" path="res://objects/halfwall.tscn" id="4_8mtho"]
 
 [node name="map0" type="Node3D"]
 script = ExtResource("1_f7tgl")

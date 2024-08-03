@@ -68,17 +68,6 @@ func change_block_visibility(z:int):
 	print("incoming z: ", z)
 	print("plane z: ", plane_z)
 	cut_plane.position.z = plane_z
-	##for child in get_tree().get_nodes_in_group("blocks"):
-	#for child in get_children():
-		#if child is Thing:
-			#if child.position.z == z:
-				#child.be_visible()
-			#elif child.position.z == z - 1:
-				#child.fading()
-			#elif child.position.z == z - 2:
-				#child.barely_visible()
-			#elif child.position.z > z or child.position.z <= z - 0.3:
-				#child.invisble()
 			
 func exit():
 	print("Exiting map")
