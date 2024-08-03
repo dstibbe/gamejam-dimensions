@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctvcmsonq3f4e"]
+[gd_scene load_steps=14 format=3 uid="uid://ctvcmsonq3f4e"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_sgoyd"]
 [ext_resource type="PackedScene" uid="uid://ddrnxfdyh5mt0" path="res://maps/map0 v2.tscn" id="2_hj38b"]
@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://diga8twhfote2" path="res://player/player.tscn" id="3_2xt0o"]
 [ext_resource type="PackedScene" uid="uid://ciljpy6wwmtj4" path="res://maps/map0.tscn" id="3_3720s"]
 [ext_resource type="PackedScene" uid="uid://ii8h5vmrlpmn" path="res://maps/map1.tscn" id="3_q4qnp"]
-[ext_resource type="PackedScene" path="res://maps/map2.tscn" id="4_61pmw"]
-[ext_resource type="PackedScene" path="res://maps/map3.tscn" id="7_bao4u"]
+[ext_resource type="PackedScene" uid="uid://bvicybnspy337" path="res://maps/map2.tscn" id="4_61pmw"]
+[ext_resource type="PackedScene" uid="uid://cf82re6i2556h" path="res://maps/map3.tscn" id="7_bao4u"]
 [ext_resource type="Script" path="res://game/keyboard_controller.gd" id="8_2qkg5"]
 [ext_resource type="AudioStream" uid="uid://b6vy60h3r5xlq" path="res://assets/NO COPYRIGHT MUSIC _ MaikonMusic - Retro Space (SYNTHWAVE, RETROWAVE, SYNTHPOP) [Royalty Free Music] (128kbps).mp3" id="11_6bd84"]
+[ext_resource type="PackedScene" uid="uid://cknc5ux0qr06l" path="res://game/splash.tscn" id="11_eiehf"]
+[ext_resource type="PackedScene" uid="uid://b677r1ceyvuj2" path="res://game/congratscreen.tscn" id="12_nx5w5"]
 
 [sub_resource type="Environment" id="Environment_mmy7v"]
 ambient_light_source = 2
@@ -45,4 +47,9 @@ stream = ExtResource("11_6bd84")
 volume_db = -20.0
 autoplay = true
 
+[node name="Splash" parent="." instance=ExtResource("11_eiehf")]
+
+[node name="Congratscreen" parent="." instance=ExtResource("12_nx5w5")]
+
+[connection signal="finished" from="." to="Congratscreen" method="finish"]
 [connection signal="new_z_pos" from="player" to="." method="_player_z_pos_changed"]

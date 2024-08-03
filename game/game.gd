@@ -4,13 +4,15 @@ class_name Game extends Node3D
 var current_level:int = 0
 var current_map:GameMap
 @onready var nr_levels = maps.size()
-
+signal finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Game READY")
 	assert(maps.size() > 0, "No maps configured")
 	load_level(0)
+
+
 
 func load_level(lvl:int):
 	assert(0 <= lvl && lvl < nr_levels, str("Invalid level: ", lvl))
@@ -34,7 +36,8 @@ func end_level():
 	var new_level = current_level + 1
 	if new_level == nr_levels:
 		print("Finished!")
-		get_tree().quit()
+		finished.emit()
+		#get_tree().quit()
 	else:	
 		var old_map = current_map
 		load_level(new_level)	

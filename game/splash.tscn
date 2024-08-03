@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cknc5ux0qr06l"]
+
+[ext_resource type="Script" path="res://game/Splash.gd" id="1_ba7hm"]
+[ext_resource type="Texture2D" uid="uid://b6a85mgaboe4i" path="res://assets/dimensions.png" id="2_j2aux"]
+
+[node name="Splash" type="CanvasLayer"]
+script = ExtResource("1_ba7hm")
+
+[node name="Dimensions" type="Sprite2D" parent="."]
+position = Vector2(576, 323)
+texture = ExtResource("2_j2aux")

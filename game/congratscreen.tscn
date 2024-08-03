@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b677r1ceyvuj2"]
+
+[ext_resource type="Script" path="res://game/Congratscreen.gd" id="1_df08s"]
+[ext_resource type="Texture2D" uid="uid://b1pl3owmtigd6" path="res://assets/DIMENSIONCONGRATS.png" id="2_l7c2r"]
+
+[node name="Congratscreen" type="CanvasLayer"]
+script = ExtResource("1_df08s")
+
+[node name="Dimensioncongrats" type="Sprite2D" parent="."]
+position = Vector2(575, 323)
+texture = ExtResource("2_l7c2r")

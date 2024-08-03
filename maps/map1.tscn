@@ -334,6 +334,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -1)
 [node name="block71" parent="." instance=ExtResource("4_otl6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -1)
 
+[node name="block128" parent="." instance=ExtResource("4_otl6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -2)
+
+[node name="block130" parent="." instance=ExtResource("4_otl6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -2)
+
+[node name="block129" parent="." instance=ExtResource("4_otl6h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -2)
+
 [node name="block72" parent="." instance=ExtResource("4_otl6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -1)
 

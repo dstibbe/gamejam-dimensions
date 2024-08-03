@@ -337,6 +337,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -1)
 [node name="block72" parent="." instance=ExtResource("4_ry4si")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -1)
 
+[node name="block129" parent="." instance=ExtResource("4_ry4si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -2)
+
+[node name="block131" parent="." instance=ExtResource("4_ry4si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -2)
+
+[node name="block130" parent="." instance=ExtResource("4_ry4si")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -2)
+
 [node name="block4" parent="." instance=ExtResource("4_ry4si")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
 
