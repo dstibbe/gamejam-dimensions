@@ -9,16 +9,38 @@ var height = 8
 var length = 17
 var width = 5
 var positions:Array[Vector3]
-
+var cut_plane:Node3D 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Engine.is_editor_hint():
-		create_map()
-	else:
+	print("Map READY")
+	cut_plane = Node3D.new()
+	add_child(cut_plane)
+	cut_plane.position = Vector3(0,0,0)
+	cut_plane.rotate_object_local(Vector3(1.,0.,0.), deg_to_rad(-90)) 
+	
+	create_map()
+	
+	print(cut_plane.transform)
+	
+	if !Engine.is_editor_hint():
 		for exit_node in get_tree().get_nodes_in_group("exit"):
 			exit_node.triggered.connect(exit)
+			
+		var scaling = Vector3(1.,1.,0.7)
+		for cuttable in get_tree().get_nodes_in_group("cuttable"):
+			cuttable.cut_plane = cut_plane
+			var c:Node3D = cuttable
+			if !Engine.is_editor_hint():
+				#var t:Transform3D = cuttable.transform
+				c.scale = scaling
+				#cuttable.transform = t.scaled(scaling)
+				#print(cuttable.transform)
+	
+	spawn_player()
+	
 
 func spawn_player():
+	print("Spawn Player")
 	player.move_to_position( $start.position )
 	change_block_visibility(player.position.z)
 
@@ -41,17 +63,22 @@ func _process(delta):
 	pass
 
 func change_block_visibility(z:int):
-	#for child in get_tree().get_nodes_in_group("blocks"):
-	for child in get_children():
-		if child is Thing:
-			if child.position.z == z:
-				child.be_visible()
-			elif child.position.z == z - 1:
-				child.fading()
-			elif child.position.z == z - 2:
-				child.barely_visible()
-			elif child.position.z > z or child.position.z <= z - 0.3:
-				child.invisble()
+	print("Updating block visibility")
+	var plane_z = z+0.5
+	print("incoming z: ", z)
+	print("plane z: ", plane_z)
+	cut_plane.position.z = plane_z
+	##for child in get_tree().get_nodes_in_group("blocks"):
+	#for child in get_children():
+		#if child is Thing:
+			#if child.position.z == z:
+				#child.be_visible()
+			#elif child.position.z == z - 1:
+				#child.fading()
+			#elif child.position.z == z - 2:
+				#child.barely_visible()
+			#elif child.position.z > z or child.position.z <= z - 0.3:
+				#child.invisble()
 			
 func exit():
 	print("Exiting map")

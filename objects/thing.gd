@@ -38,10 +38,4 @@ func barely_visible():
 			child.set_instance_shader_parameter("invisible", false)
 
 func invisble():
-	for child in get_children():
-		if child is MeshInstance3D:
-			child.visible = false
-			child.set_instance_shader_parameter("visible", false)
-			child.set_instance_shader_parameter("fading", false)
-			child.set_instance_shader_parameter("barely_visible", false)
-			child.set_instance_shader_parameter("invisible", true)
+	pass

@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://owkqw4kbnt0h"]
+[gd_scene load_steps=6 format=3 uid="uid://owkqw4kbnt0h"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_88mik"]
 [ext_resource type="PackedScene" uid="uid://cm28x7ffdcohh" path="res://objects/floor.tscn" id="2_tcr40"]
 [ext_resource type="PackedScene" uid="uid://do5gu2yeyogp3" path="res://objects/exit.tscn" id="3_ucw8k"]
+[ext_resource type="PackedScene" uid="uid://dylqffsnqjhl8" path="res://objects/halfwall.tscn" id="4_b6okh"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w60cj"]
 
 [node name="map0" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0518513, -0.00806046, -0.000916004)
 script = ExtResource("1_88mik")
 
 [node name="floor" parent="." instance=ExtResource("2_tcr40")]
@@ -26,3 +30,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -1)
 
 [node name="start" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40228, 0.985776, 0)
+
+[node name="halfwall" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall2" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall5" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall3" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall4" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="cut_plane_old" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 3)
+mesh = SubResource("PlaneMesh_w60cj")

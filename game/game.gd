@@ -8,16 +8,15 @@ var current_map:GameMap
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Game READY")
 	assert(maps.size() > 0, "No maps configured")
-	start_level(0)
-	
-func start_level(lvl:int):
+	load_level(0)
+
+func load_level(lvl:int):
 	assert(0 <= lvl && lvl < nr_levels, str("Invalid level: ", lvl))
 	current_level = lvl
 	current_map = maps[current_level].instantiate()
 	current_map.player=$player
-	current_map.create_map()
-	current_map.spawn_player()
 	current_map.exiting.connect(end_level)
 	add_child(current_map)
 	
@@ -36,5 +35,5 @@ func end_level():
 		get_tree().quit()
 	else:	
 		var old_map = current_map
-		start_level(new_level)	
+		load_level(new_level)	
 		old_map.queue_free()
