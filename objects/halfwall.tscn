@@ -1,16 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyyayaoels8i5"]
+[gd_scene load_steps=8 format=3 uid="uid://dyyayaoels8i5"]
 
 [ext_resource type="Script" path="res://objects/halfwall.gd" id="1_xd68b"]
-[ext_resource type="Shader" path="res://resources/slicer.gdshader" id="2_pqqys"]
+[ext_resource type="Material" uid="uid://bodgkjqplc1sv" path="res://resources/cuttable-shadermat.tres" id="2_8cvgx"]
 [ext_resource type="Texture2D" uid="uid://bnqlqub0j2fi8" path="res://resources/GLB format/Textures/colormap.png" id="4_7dgvj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6tkjn"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p25t1"]
-render_priority = 0
-shader = ExtResource("2_pqqys")
-shader_parameter/cutplane = null
-shader_parameter/_albedo = ExtResource("4_7dgvj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fa8a"]
 resource_name = "colormap"
@@ -60,6 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_6tkjn")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-material_override = SubResource("ShaderMaterial_p25t1")
+material_override = ExtResource("2_8cvgx")
 mesh = SubResource("ArrayMesh_boiak")
 skeleton = NodePath("")

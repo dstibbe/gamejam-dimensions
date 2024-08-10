@@ -1,6 +1,8 @@
 @tool
 class_name HalfWall extends Cuttable
 
+func _mesh() -> MeshInstance3D:
+	return $mesh
 
 func _retrieve_texture() -> Texture2D : 
 	var the_mesh: ArrayMesh = $mesh.mesh

@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bodgkjqplc1sv"]
+
+[ext_resource type="Shader" path="res://resources/slicer.gdshader" id="1_5nkxi"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k57j6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5nkxi")
+shader_parameter/disabled = true
+shader_parameter/cutplane = null
+shader_parameter/visible_depth = 2.0
+shader_parameter/_albedo = SubResource("NoiseTexture2D_k57j6")
