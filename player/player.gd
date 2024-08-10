@@ -17,6 +17,7 @@ var collision_min: int = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var door = 0
+var looking_at = 1
 
 
 var direction: DIRECTION = DIRECTION.NONE
@@ -36,10 +37,12 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 
 	if direction== DIRECTION.LEFT:
+		turn(-1)
 		velocity.x = -1 * SPEED
 		if position.x > maxx or position.x < minx:
 			position.x = roundi(position.x)
 	elif direction== DIRECTION.RIGHT:
+		turn(1)
 		velocity.x = SPEED
 		if position.x > maxx or position.x < minx:
 			position.x = roundi(position.x)
@@ -81,8 +84,13 @@ func left():
 	direction= DIRECTION.LEFT
 func right():
 	direction= DIRECTION.RIGHT
-func jump():
+func jump():	
 	action = ACTION.JUMP
+
+func turn(side):
+	if looking_at != side:
+		looking_at = side
+		$CollisionShape3D2.rotate_y(PI)
 
 func set_zs(min_z, max_z):
 	minz = min_z

@@ -7,6 +7,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Window.NOTIFICATION_WM_SIZE_CHANGED:
+		#print("window_size: ", get_window().size)
+		#change_size(get_window().size)
+		#$Dimensioncongrats.position = Vector2(get_window().size.x / 2, get_window().size.y / 2)
+	#1152, 648
+		var sizing:float = get_window().size.x / 1152.0
+		#print("sizing: ", sizing)
+		scale = Vector2(sizing, sizing)
+		
 	if finished:
 		if Input.is_anything_pressed():
 			get_tree().quit()

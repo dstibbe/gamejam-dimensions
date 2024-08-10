@@ -12,9 +12,9 @@ void fragment() {
 	float part_max = part + (1.0/5.0);
 	vec2 scaled = UV * vec2(3.0, 2.0);
 	if ( scaled.y >= part && scaled.y < part_max ){
-		ALBEDO = vec3(0.1, 1, 0.1);
+		ALBEDO = vec3(1, 0.0, 0.);
 	}else{
-		ALBEDO = vec3(1.0, 1.0, 1.0);
+		ALBEDO = vec3(0.0, 0.0, 0.0);
 	}	
 }
 

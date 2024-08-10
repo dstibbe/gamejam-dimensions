@@ -3,6 +3,7 @@ class_name Game extends Node3D
 @export var maps:Array[PackedScene]
 var current_level:int = 0
 var current_map:GameMap
+var fullscreen = false
 @onready var nr_levels = maps.size()
 signal finished
 
@@ -25,6 +26,15 @@ func load_level(lvl:int):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _input(event):
+	var window = get_window()
+	if event.is_action_released("f11"):
+		if window.mode != Window.MODE_FULLSCREEN:
+			window.mode = Window.MODE_FULLSCREEN
+		else:
+			window.mode = Window.MODE_WINDOWED
+	
 
 func _player_z_pos_changed(z:float):
 	Audio.change_dimensions()

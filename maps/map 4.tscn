@@ -1,0 +1,239 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnim5mf5g2bod"]
+
+[ext_resource type="Script" path="res://maps/map.gd" id="1_jacwy"]
+[ext_resource type="PackedScene" uid="uid://cm28x7ffdcohh" path="res://objects/floor.tscn" id="2_sapkc"]
+[ext_resource type="PackedScene" path="res://objects/exit.tscn" id="3_bttow"]
+[ext_resource type="PackedScene" uid="uid://dyyayaoels8i5" path="res://objects/halfwall.tscn" id="4_12yfo"]
+[ext_resource type="PackedScene" uid="uid://cnwt7j0wwcitr" path="res://objects/block.tscn" id="5_d5vpa"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w60cj"]
+
+[node name="map0" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0518513, -0.00806046, -0.000916004)
+script = ExtResource("1_jacwy")
+
+[node name="floor" parent="." instance=ExtResource("2_sapkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="floor2" parent="." instance=ExtResource("2_sapkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="floor3" parent="." instance=ExtResource("2_sapkc")]
+
+[node name="floor4" parent="." instance=ExtResource("2_sapkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="floor5" parent="." instance=ExtResource("2_sapkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="exit" parent="." instance=ExtResource("3_bttow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, -2)
+
+[node name="start" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 0)
+
+[node name="halfwall2" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall5" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall8" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall10" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall11" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall51" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, 1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall12" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall40" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall13" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall14" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall15" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5, -1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall52" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall16" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall17" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall38" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall18" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall39" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall19" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall20" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall21" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall22" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall31" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall23" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall41" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 7, 1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall48" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 7, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall42" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7, -1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall50" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall43" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall44" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7, 1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall45" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall46" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7, -1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall47" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 7, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall32" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall24" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall25" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall26" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall27" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall28" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall29" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall37" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall33" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall36" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall34" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall49" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, 0)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall35" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 5, 2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall30" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_12yfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, -1)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="cut_plane_old" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 3)
+mesh = SubResource("PlaneMesh_w60cj")
+
+[node name="block" parent="." instance=ExtResource("5_d5vpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 0)
+
+[node name="block2" parent="." instance=ExtResource("5_d5vpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 1)
+
+[node name="block3" parent="." instance=ExtResource("5_d5vpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 1)
+
+[node name="block4" parent="." instance=ExtResource("5_d5vpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 2)
+
+[node name="block5" parent="." instance=ExtResource("5_d5vpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 2)
+
+[node name="block6" parent="." instance=ExtResource("5_d5vpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 2)

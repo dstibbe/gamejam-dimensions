@@ -7,5 +7,5 @@
 script = ExtResource("1_ba7hm")
 
 [node name="Dimensions" type="Sprite2D" parent="."]
-position = Vector2(576, 323)
 texture = ExtResource("2_j2aux")
+centered = false

@@ -11,3 +11,4 @@ func _retrieve_texture() -> Texture2D :
 	var mat:StandardMaterial3D = mdt.get_material()
 	var texture:Texture2D = mat.albedo_texture
 	return texture
+

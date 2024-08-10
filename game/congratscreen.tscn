@@ -7,5 +7,5 @@
 script = ExtResource("1_df08s")
 
 [node name="Dimensioncongrats" type="Sprite2D" parent="."]
-position = Vector2(575, 323)
 texture = ExtResource("2_l7c2r")
+centered = false

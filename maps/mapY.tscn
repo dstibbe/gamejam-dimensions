@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://wrdfdt1y362h"]
+[gd_scene load_steps=6 format=3 uid="uid://c3eljyma2exny"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_32nd1"]
 [ext_resource type="PackedScene" uid="uid://cm28x7ffdcohh" path="res://objects/floor.tscn" id="2_krbj2"]
-[ext_resource type="PackedScene" uid="uid://do5gu2yeyogp3" path="res://objects/exit.tscn" id="3_0nm5d"]
+[ext_resource type="PackedScene" path="res://objects/exit.tscn" id="3_0nm5d"]
 [ext_resource type="PackedScene" uid="uid://cnwt7j0wwcitr" path="res://objects/block.tscn" id="4_v5d00"]
+[ext_resource type="PackedScene" uid="uid://dyyayaoels8i5" path="res://objects/halfwall.tscn" id="5_lvts2"]
 
 [node name="map0" type="Node3D"]
 script = ExtResource("1_32nd1")
@@ -23,28 +24,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="exit" parent="." instance=ExtResource("3_0nm5d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -1)
-
-[node name="block" parent="." instance=ExtResource("4_v5d00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
-
-[node name="block2" parent="." instance=ExtResource("4_v5d00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1)
-
-[node name="block3" parent="." instance=ExtResource("4_v5d00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
-
-[node name="block4" parent="." instance=ExtResource("4_v5d00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
-
-[node name="block5" parent="." instance=ExtResource("4_v5d00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, -1)
 
 [node name="block6" parent="." instance=ExtResource("4_v5d00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -2)
 
-[node name="block7" parent="." instance=ExtResource("4_v5d00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -2)
-
 [node name="start" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40228, 0.985776, 0)
+
+[node name="halfwall" parent="." instance=ExtResource("5_lvts2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -2)
+
+[node name="halfwall2" parent="." instance=ExtResource("5_lvts2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
+
+[node name="halfwall3" parent="." instance=ExtResource("5_lvts2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -1)
+
+[node name="halfwall4" parent="." instance=ExtResource("5_lvts2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+
+[node name="halfwall5" parent="." instance=ExtResource("5_lvts2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 1)
+
+[node name="halfwall6" parent="." instance=ExtResource("5_lvts2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)

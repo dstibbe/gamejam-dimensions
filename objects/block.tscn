@@ -1,17 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnwt7j0wwcitr"]
+[gd_scene load_steps=8 format=3 uid="uid://cnwt7j0wwcitr"]
 
 [ext_resource type="Script" path="res://objects/block.gd" id="1_xmqio"]
 [ext_resource type="Material" uid="uid://bodgkjqplc1sv" path="res://resources/cuttable-shadermat.tres" id="2_wpeq3"]
+[ext_resource type="Texture2D" uid="uid://bnqlqub0j2fi8" path="res://resources/GLB format/Textures/colormap.png" id="3_tsqwp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6tkjn"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k57j6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djrwc"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("3_tsqwp")
+texture_filter = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jybne"]
-albedo_texture = SubResource("NoiseTexture2D_k57j6")
+[sub_resource type="ArrayMesh" id="ArrayMesh_ikww7"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.9, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 6, 0, 4, 0, 5, 0, 5, 0, 7, 0, 6, 0, 1, 0, 4, 0, 6, 0, 6, 0, 3, 0, 1, 0, 6, 0, 7, 0, 2, 0, 2, 0, 3, 0, 6, 0, 7, 0, 5, 0, 0, 0, 0, 0, 2, 0, 7, 0, 1, 0, 0, 0, 5, 0, 5, 0, 4, 0, 1, 0),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0)
+}]
+blend_shape_mode = 0
 
-[sub_resource type="BoxMesh" id="BoxMesh_0ctbi"]
-material = SubResource("StandardMaterial3D_jybne")
+[sub_resource type="ArrayMesh" id="ArrayMesh_ativ4"]
+resource_name = "dirt_dirt"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.9, 1),
+"attribute_data": PackedByteArray(255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 101, 198, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 152, 249, 255, 87, 101, 198, 255, 87, 101, 198),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0, 6, 0, 4, 0, 5, 0, 5, 0, 7, 0, 6, 0, 10, 0, 8, 0, 9, 0, 9, 0, 11, 0, 10, 0, 14, 0, 12, 0, 13, 0, 13, 0, 15, 0, 14, 0, 18, 0, 16, 0, 17, 0, 17, 0, 19, 0, 18, 0, 22, 0, 20, 0, 21, 0, 21, 0, 23, 0, 22, 0),
+"material": SubResource("StandardMaterial3D_djrwc"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 255, 255, 0, 0, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 255, 127, 0, 0, 0, 0, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 255, 255, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ikww7")
 
 [node name="block" type="StaticBody3D"]
 script = ExtResource("1_xmqio")
@@ -21,6 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_6tkjn")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1.11, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("2_wpeq3")
-mesh = SubResource("BoxMesh_0ctbi")
+mesh = SubResource("ArrayMesh_ativ4")
+skeleton = NodePath("")

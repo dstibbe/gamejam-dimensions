@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctvcmsonq3f4e"]
+[gd_scene load_steps=18 format=3 uid="uid://ctvcmsonq3f4e"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_sgoyd"]
+[ext_resource type="PackedScene" uid="uid://dnim5mf5g2bod" path="res://maps/map 4.tscn" id="2_g84y5"]
 [ext_resource type="PackedScene" uid="uid://ddrnxfdyh5mt0" path="res://maps/map0 v2.tscn" id="2_hj38b"]
-[ext_resource type="PackedScene" uid="uid://owkqw4kbnt0h" path="res://maps/map-test.tscn" id="2_qna2t"]
+[ext_resource type="PackedScene" uid="uid://owkqw4kbnt0h" path="res://maps/map 4 turorial.tscn" id="2_qna2t"]
 [ext_resource type="PackedScene" uid="uid://up4055q3j2o5" path="res://maps/map3 v2.tscn" id="2_r7haj"]
 [ext_resource type="PackedScene" uid="uid://diga8twhfote2" path="res://player/player.tscn" id="3_2xt0o"]
 [ext_resource type="PackedScene" uid="uid://ciljpy6wwmtj4" path="res://maps/map0.tscn" id="3_3720s"]
@@ -10,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bvicybnspy337" path="res://maps/map2.tscn" id="4_61pmw"]
 [ext_resource type="PackedScene" uid="uid://cf82re6i2556h" path="res://maps/map3.tscn" id="7_bao4u"]
 [ext_resource type="Script" path="res://game/keyboard_controller.gd" id="8_2qkg5"]
+[ext_resource type="PackedScene" uid="uid://c3eljyma2exny" path="res://maps/mapY.tscn" id="9_m72yq"]
+[ext_resource type="PackedScene" uid="uid://bgk2s8t8mx08k" path="res://maps/map 4 tut.tscn" id="10_nircr"]
 [ext_resource type="AudioStream" uid="uid://b6vy60h3r5xlq" path="res://assets/NO COPYRIGHT MUSIC _ MaikonMusic - Retro Space (SYNTHWAVE, RETROWAVE, SYNTHPOP) [Royalty Free Music] (128kbps).mp3" id="11_6bd84"]
 [ext_resource type="PackedScene" uid="uid://cknc5ux0qr06l" path="res://game/splash.tscn" id="11_eiehf"]
 [ext_resource type="PackedScene" uid="uid://b677r1ceyvuj2" path="res://game/congratscreen.tscn" id="12_nx5w5"]
@@ -25,7 +28,7 @@ volumetric_fog_emission = Color(0, 0, 0.901961, 1)
 
 [node name="game" type="Node3D"]
 script = ExtResource("1_sgoyd")
-maps = Array[PackedScene]([ExtResource("2_r7haj"), ExtResource("2_qna2t"), ExtResource("3_3720s"), ExtResource("2_hj38b"), ExtResource("3_q4qnp"), ExtResource("4_61pmw"), ExtResource("7_bao4u")])
+maps = Array[PackedScene]([ExtResource("3_3720s"), ExtResource("2_hj38b"), ExtResource("2_qna2t"), ExtResource("3_q4qnp"), ExtResource("4_61pmw"), ExtResource("7_bao4u"), ExtResource("2_r7haj"), ExtResource("9_m72yq"), ExtResource("10_nircr"), ExtResource("2_g84y5")])
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7547, 10)
