@@ -104,6 +104,22 @@ cut_plane = NodePath("../cut_plane_old")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, 2)
 cut_plane = NodePath("../cut_plane_old")
 
+[node name="halfwall16" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall17" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -2)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall18" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -1.74623e-10)
+cut_plane = NodePath("../cut_plane_old")
+
+[node name="halfwall19" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 2)
+cut_plane = NodePath("../cut_plane_old")
+
 [node name="halfwall15" parent="." node_paths=PackedStringArray("cut_plane") instance=ExtResource("4_b6okh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 2)
 cut_plane = NodePath("../cut_plane_old")
@@ -240,7 +256,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -1)
 
 [node name="block12" parent="." instance=ExtResource("5_s03a3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -1.74623e-10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
 
 [node name="block13" parent="." instance=ExtResource("5_s03a3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 1)
@@ -255,7 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 1)
 
 [node name="block17" parent="." instance=ExtResource("5_s03a3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -1.74623e-10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
 
 [node name="block18" parent="." instance=ExtResource("5_s03a3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -1)

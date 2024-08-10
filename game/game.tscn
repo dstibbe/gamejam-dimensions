@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://cf82re6i2556h" path="res://maps/map3.tscn" id="7_bao4u"]
 [ext_resource type="Script" path="res://game/keyboard_controller.gd" id="8_2qkg5"]
 [ext_resource type="PackedScene" uid="uid://c3eljyma2exny" path="res://maps/mapY.tscn" id="9_m72yq"]
-[ext_resource type="PackedScene" uid="uid://bgk2s8t8mx08k" path="res://maps/map 4 tut.tscn" id="10_nircr"]
 [ext_resource type="AudioStream" uid="uid://b6vy60h3r5xlq" path="res://assets/NO COPYRIGHT MUSIC _ MaikonMusic - Retro Space (SYNTHWAVE, RETROWAVE, SYNTHPOP) [Royalty Free Music] (128kbps).mp3" id="11_6bd84"]
 [ext_resource type="PackedScene" uid="uid://cknc5ux0qr06l" path="res://game/splash.tscn" id="11_eiehf"]
+[ext_resource type="PackedScene" uid="uid://dg8rqc7o2qxap" path="res://maps/mapX.tscn" id="11_tdfgy"]
 [ext_resource type="PackedScene" uid="uid://b677r1ceyvuj2" path="res://game/congratscreen.tscn" id="12_nx5w5"]
 
 [sub_resource type="Environment" id="Environment_mmy7v"]
@@ -28,7 +28,7 @@ volumetric_fog_emission = Color(0, 0, 0.901961, 1)
 
 [node name="game" type="Node3D"]
 script = ExtResource("1_sgoyd")
-maps = Array[PackedScene]([ExtResource("3_3720s"), ExtResource("2_hj38b"), ExtResource("2_qna2t"), ExtResource("3_q4qnp"), ExtResource("4_61pmw"), ExtResource("7_bao4u"), ExtResource("2_r7haj"), ExtResource("9_m72yq"), ExtResource("10_nircr"), ExtResource("2_g84y5")])
+maps = Array[PackedScene]([ExtResource("2_hj38b"), ExtResource("3_3720s"), ExtResource("3_q4qnp"), ExtResource("4_61pmw"), ExtResource("7_bao4u"), ExtResource("2_r7haj"), ExtResource("9_m72yq"), ExtResource("2_qna2t"), ExtResource("2_g84y5"), ExtResource("11_tdfgy")])
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7547, 10)
